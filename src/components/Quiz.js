@@ -31,7 +31,7 @@ class Quiz extends Component {
     if ( !questionsAreLoaded ) {
       return <div>Loading...</div>
     } else if ( isComplete ) {
-      return <EndScreen />
+      return <EndScreen score = {totalScore} />
     }
 
     return (

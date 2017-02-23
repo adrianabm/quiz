@@ -5,6 +5,7 @@ class EndScreen extends Component {
     return (
       <div>
         End of the Quiz
+        <p>You made { this.props.score } points</p>
       </div>
     )
   }
