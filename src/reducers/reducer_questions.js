@@ -19,12 +19,18 @@ export default function(state = defaultState, action ) {
 
     case NEXT_QUESTION:
     let nextQuestion = state.currentQuestion + 1
+    if(nextQuestion >= state.questions.length) {
+      nextQuestion = 0
+    }
     return Object.assign({}, state, {
       currentQuestion: nextQuestion,
     })
 
     case PREVIOUS_QUESTION:
     let previousQuestion = state.currentQuestion - 1
+    if(previousQuestion < 0 ) {
+      previousQuestion = state.questions.length - 1
+    }
     return Object.assign({}, state, {
       currentQuestion: previousQuestion,
     })
