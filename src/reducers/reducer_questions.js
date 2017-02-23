@@ -1,9 +1,19 @@
 import { FETCH_QUESTIONS } from '../actions/fetch_questions'
 
-export default function(state = [], action ) {
+const defaultState = {
+  currentQuestion: 0,
+  questions: [],
+  questionsAreLoaded: false,
+  IsComplete: false
+}
+
+export default function(state = defaultState, action ) {
   switch (action.type) {
     case FETCH_QUESTIONS:
-      return action.payload.data
+      return Object.assign({}, state, {
+        questions: action.payload.data,
+        questionsAreLoaded: true
+      })
     }
   return state
 }
