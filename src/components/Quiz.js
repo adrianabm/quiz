@@ -5,6 +5,7 @@ import previousQuestion from '../actions/previous_question'
 import nextQuestion from '../actions/next_question'
 
 import Question from './Question'
+import Counter from './Counter';
 
 class Quiz extends Component {
   componentWillMount() {
@@ -31,6 +32,11 @@ class Quiz extends Component {
     return (
       <div className="quiz">
         <h3>Quiz</h3>
+        <Counter
+          counter={ currentQuestion + 1 }
+          total={ questions.length }
+        />
+        
         <Question
           question={ questions[currentQuestion] }
         />
