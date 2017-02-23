@@ -36,19 +36,28 @@ class Quiz extends Component {
 
     return (
       <div className="quiz">
-        <h3>Quiz</h3>
-        Score: { totalScore }
-        <Counter
-          counter={ currentQuestion + 1 }
-          total={ questions.length }
-        />
+        <div className="quiz-header">
+          <h3>What are your favorite things?</h3>
+          <p>Check how many points you can earn with this awesome quiz!</p>
+        </div>
+        <div className="quiz-body">
+          {/* <p>Score: { totalScore }</p> */}
+          <Counter
+            counter={ currentQuestion + 1 }
+            total={ questions.length }
+          />
 
-        <Question
-          question={ questions[currentQuestion] }
-          handleAnswer={ this.handleNextQuestion.bind(this) }
-        />
-        <button onClick={ this.handlePreviousQuestion.bind(this) }>Previous</button>
-        {/* <button onClick={ this.handleNextQuestion.bind(this) }>Next</button> */}
+          <Question
+            question={ questions[currentQuestion] }
+            handleAnswer={ this.handleNextQuestion.bind(this) }
+          />
+          <button
+            disabled={(currentQuestion === 0)}
+            onClick={ this.handlePreviousQuestion.bind(this)}
+            className="button">
+            <i className="fa fa-chevron-left" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
     )
   }

@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Light.ttf');
+}
+
+// Variables
+$bg-answer: #565656;
+$bg-answer-hover: #666666;
+$bg-main: #EEEEEE;
+$bg-quiz-body: #212121;
+$contrast-color: #E9B000;
+
+body {
+  background: $bg-main;
+  font-family: 'Lato', 'Helvetica', sans-serif;
+}
+
+ul {
+  padding: 0px;
+}
+
+.answer {
+  background: $bg-answer;
+  cursor: pointer;
+  list-style: none;
+  margin: 5px 0px;
+  padding: 10px;
+}
+
+.answer:hover {
+  background: $bg-answer-hover;
+}
+
+.float-right {
+  float: right;
+}
+
+.button {
+  background: $bg-main;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+.button:disabled,
+.button:disabled:hover {
+  background: $bg-main;
+  cursor: not-allowed;
+}
+
+.button:hover,
+.button:focus,
+.button:active,
+.button:focus:active {
+  background: $contrast-color;
+  outline: none;
+}
+
+.quiz {
+  margin: auto;
+  padding: 20px 0px;
+  width: 70%;
+}
+
+.quiz-header {
+  background: white;
+  border: 1px solid $bg-quiz-body;
+  text-align: center;
+}
+
+.quiz-body {
+  background: $bg-quiz-body;
+  color: #DDD;
+  padding: 20px;
+}

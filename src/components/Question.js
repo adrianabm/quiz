@@ -10,15 +10,16 @@ class Question extends Component {
       return (
         <li
           key={ answer.answer }
-          onClick={this.props.handleAnswer.bind(this, answer)}>
-            { answer.answer }, { answer.points }
+          onClick={this.props.handleAnswer.bind(this, answer)}
+          className="answer">
+            { answer.answer }
         </li>
       )
     })
 
     return (
       <div>
-        <h3>{ question.question }</h3>
+        <h4>{ question.question }</h4>
         <ul>{ answers }</ul>
       </div>
     )
