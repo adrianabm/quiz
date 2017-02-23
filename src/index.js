@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
+import promise from 'redux-promise'
 
 import App from './components/App'
 import Quiz from './components/Quiz'
 import reducers from './reducers'
 
-const createStoreWithMiddleware = applyMiddleware()(createStore)
+const createStoreWithMiddleware = applyMiddleware(
+  promise
+)(createStore)
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
