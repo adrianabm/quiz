@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class App extends Component {
+class Quiz extends Component {
   render() {
     return (
       <div>
-        { this.props.children }
+        I'm the Quiz Component
       </div>
     )
   }
 }
 
-export default App
+export default Quiz

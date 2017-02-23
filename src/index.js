@@ -4,7 +4,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 
-import App from './components/app'
+import App from './components/App'
+import Quiz from './components/Quiz'
 import reducers from './reducers'
 
 const createStoreWithMiddleware = applyMiddleware()(createStore)
@@ -12,7 +13,9 @@ const createStoreWithMiddleware = applyMiddleware()(createStore)
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory}>
-      <Route path="/" component={ App } />
+      <Route path="/" component={ App }>
+        <IndexRoute component={ Quiz } />
+      </Route>
     </Router>
   </Provider>
   , document.querySelector('.container'))
