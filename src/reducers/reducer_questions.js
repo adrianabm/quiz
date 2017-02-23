@@ -1,4 +1,6 @@
 import { FETCH_QUESTIONS } from '../actions/fetch_questions'
+import { NEXT_QUESTION } from '../actions/next_question'
+import { PREVIOUS_QUESTION } from '../actions/previous_question'
 
 const defaultState = {
   currentQuestion: 0,
@@ -14,6 +16,19 @@ export default function(state = defaultState, action ) {
         questions: action.payload.data,
         questionsAreLoaded: true
       })
-    }
+
+    case NEXT_QUESTION:
+    let nextQuestion = state.currentQuestion + 1
+    return Object.assign({}, state, {
+      currentQuestion: nextQuestion,
+    })
+
+    case PREVIOUS_QUESTION:
+    let previousQuestion = state.currentQuestion - 1
+    return Object.assign({}, state, {
+      currentQuestion: previousQuestion,
+    })
+  }
+
   return state
 }

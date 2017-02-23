@@ -4,7 +4,7 @@ export const FETCH_QUESTIONS = 'FETCH_QUESTIONS'
 
 const API_URL = 'http://localhost:3000/questions'
 
-export function fetchQuestions() {
+export default () => {
   const request = axios.get(`${API_URL}`)
 
   return {
