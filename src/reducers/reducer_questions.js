@@ -8,7 +8,7 @@ const defaultState = {
   questions: [],
   questionsAreLoaded: false,
   totalScore: 0,
-  IsComplete: false
+  isComplete: false
 }
 
 export default function(state = defaultState, action ) {
@@ -22,11 +22,14 @@ export default function(state = defaultState, action ) {
 
     case NEXT_QUESTION:
     let nextQuestion = state.currentQuestion + 1
+    let complete = false
     if(nextQuestion >= state.questions.length) {
+      complete = true,
       nextQuestion = 0
     }
       return Object.assign({}, state, {
         currentQuestion: nextQuestion,
+        isComplete: complete
       }
     )
 
