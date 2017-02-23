@@ -1,0 +1,75 @@
+{
+  "questions": [
+    {
+      "question": "What is your favorite versioning tool?",
+      "answers": [
+        {
+          "answer": "SVN",
+          "points": 0
+        },
+        {
+          "answer": "GIT",
+          "points": 10
+        },
+        {
+          "answer": "CVS",
+          "points": -5
+        },
+        {
+          "answer": "Mercurial",
+          "points": 5
+        },
+        {
+          "answer": "HUHH?",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "question": "What is your favorite cat?",
+      "answers": [
+        {
+          "answer": "Ceiling Cat",
+          "points": 10
+        },
+        {
+          "answer": "Invisible Bike Cat",
+          "points": 5
+        },
+        {
+          "answer": "Octocat",
+          "points": 8
+        },
+        {
+          "answer": "Grumpy Cat",
+          "points": 12
+        },
+        {
+          "answer": "Monorail Cat",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "question": "What is your favorite jewel?",
+      "answers": [
+        {
+          "answer": "Diamond",
+          "points": 5
+        },
+        {
+          "answer": "Ruby",
+          "points": 10
+        },
+        {
+          "answer": "Kryptonite",
+          "points": 10
+        },
+        {
+          "answer": "Emerald",
+          "points": -5
+        }
+      ]
+    }
+  ]
+}
