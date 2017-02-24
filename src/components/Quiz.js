@@ -35,13 +35,12 @@ class Quiz extends Component {
     }
 
     return (
-      <div className="quiz">
-        <div className="quiz-header">
+      <div className="panel">
+        <div className="panel-header">
           <h3>What are your favorite things?</h3>
           <p>Check how many points you can earn with this awesome quiz!</p>
         </div>
-        <div className="quiz-body">
-          {/* <p>Score: { totalScore }</p> */}
+        <div className="panel-body">
           <Counter
             counter={ currentQuestion + 1 }
             total={ questions.length }

@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux'
 import promise from 'redux-promise'
 
 import App from './components/App'
+import Home from './components/Home'
 import Quiz from './components/Quiz'
 import reducers from './reducers'
 
@@ -17,7 +18,8 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory}>
       <Route path="/" component={ App }>
-        <IndexRoute component={ Quiz } />
+        <IndexRoute component={ Home } />
+        <Route path="/quiz" component={ Quiz } />
       </Route>
     </Router>
   </Provider>
