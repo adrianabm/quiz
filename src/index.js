@@ -3,19 +3,17 @@ import ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import promise from 'redux-promise'
-
+import reduxThunk from 'redux-thunk'
 import App from './components/App'
 import Home from './components/Home'
 import Quiz from './components/Quiz'
 import reducers from './reducers'
 
-const createStoreWithMiddleware = applyMiddleware(
-  promise
-)(createStore)
+const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore)
+const store = createStoreWithMiddleware(reducers)
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={ store }>
     <Router history={browserHistory}>
       <Route path="/" component={ App }>
         <IndexRoute component={ Home } />

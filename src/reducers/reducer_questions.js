@@ -14,6 +14,7 @@ const defaultState = {
 export default function(state = defaultState, action ) {
   switch (action.type) {
     case FETCH_QUESTIONS:
+      console.log(action.payload)
       return Object.assign({}, state, {
         questions: action.payload.data,
         questionsAreLoaded: true

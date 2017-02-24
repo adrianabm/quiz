@@ -2,13 +2,16 @@ import axios from 'axios'
 
 export const FETCH_QUESTIONS = 'FETCH_QUESTIONS'
 
-const API_URL = 'http://localhost:3000/questions'
+const API_URL = 'http://localhost:3000'
 
 export default () => {
-  const request = axios.get(`${API_URL}`)
-
-  return {
-    type: FETCH_QUESTIONS,
-    payload: request
+  return function(dispatch) {
+  axios.get(`${API_URL}/questions`)
+    .then( response => {
+      dispatch({ type: FETCH_QUESTIONS, payload: response })
+    })
+    .catch(() => {
+      console.log('error')
+    })
   }
 }
