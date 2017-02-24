@@ -15,7 +15,6 @@ const defaultState = {
 export default function(state = defaultState, action ) {
   switch (action.type) {
     case FETCH_QUESTIONS:
-    console.log('hi')
       return Object.assign({}, state, {
         questions: action.payload.data,
         isLoading: false
@@ -23,7 +22,6 @@ export default function(state = defaultState, action ) {
     )
 
     case CATCH_ERRORS:
-    console.log('hi')
       return Object.assign({}, state, {
         isLoading: false,
         hasError: true

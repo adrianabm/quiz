@@ -4,6 +4,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import reduxThunk from 'redux-thunk'
+
+// Components
 import App from './components/App'
 import Home from './components/Home'
 import Quiz from './components/Quiz'
