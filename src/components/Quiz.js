@@ -26,9 +26,9 @@ class Quiz extends Component {
   }
 
   render() {
-    const {questions, questionsAreLoaded, currentQuestion, totalScore, isComplete } = this.props.questions
+    const {questions, isLoading, currentQuestion, totalScore, isComplete } = this.props.questions
 
-    if ( !questionsAreLoaded ) {
+    if (isLoading) {
       return <div>Loading...</div>
     } else if ( isComplete ) {
       return <EndScreen score = {totalScore} />
