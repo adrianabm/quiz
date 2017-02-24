@@ -8,6 +8,7 @@ import getPoints from '../actions/get_points'
 import Question from './Question'
 import Counter from './Counter'
 import EndScreen from './EndScreen'
+import ErrorScreen from './ErrorScreen'
 
 class Quiz extends Component {
   componentWillMount() {
@@ -26,12 +27,14 @@ class Quiz extends Component {
   }
 
   render() {
-    const {questions, isLoading, currentQuestion, totalScore, isComplete } = this.props.questions
+    const {questions, isLoading, isComplete, hasError, currentQuestion, totalScore } = this.props.questions
 
     if (isLoading) {
       return <div>Loading...</div>
-    } else if ( isComplete ) {
+    } else if (isComplete) {
       return <EndScreen score = {totalScore} />
+    } else if (hasError) {
+      return <ErrorScreen />
     }
 
     return (

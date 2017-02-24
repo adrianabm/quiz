@@ -8,7 +8,8 @@ const defaultState = {
   questions: [],
   isLoading: true,
   totalScore: 0,
-  isComplete: false
+  isComplete: false,
+  hasError: false
 }
 
 export default function(state = defaultState, action ) {
@@ -24,7 +25,8 @@ export default function(state = defaultState, action ) {
     case CATCH_ERRORS:
     console.log('hi')
       return Object.assign({}, state, {
-        isLoading: false
+        isLoading: false,
+        hasError: true
       }
     )
 
