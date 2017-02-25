@@ -7,7 +7,7 @@ const defaultState = {
   currentQuestion: 0,
   questions: [],
   isLoading: true,
-  totalScore: 0,
+  totalScore: [],
   isComplete: false,
   hasError: false
 }
@@ -52,11 +52,27 @@ export default function(state = defaultState, action ) {
     )
 
     case GET_POINTS:
-      return Object.assign({}, state, {
-        totalScore: state.totalScore + action.payload
+      // In case the person returns to the previous question and answer it again,
+      // the answer will be replaced by the new answer
+      let existingAnswer = state.totalScore.find(t => t.questionId === action.payload.questionId)
+      if (existingAnswer === undefined) {
+        return Object.assign({}, state, {
+          totalScore: [ ...state.totalScore, action.payload ]
+        })
+      } else {
+        let newAnswers = state.totalScore.map((answer) => {
+          if (answer.questionId === action.payload.questionId) {
+            return Object.assign({}, answer, {
+              points: action.payload.points,
+              answer: action.payload.answer
+            })
+          }
+          return answer
+        })
+        return Object.assign({}, state, {
+          totalScore: newAnswers
+        })
       }
-    )
   }
-
   return state
 }

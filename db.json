@@ -4,22 +4,27 @@
       "question": "What is your favorite versioning tool?",
       "answers": [
         {
+          "questionId": 0,
           "answer": "SVN",
           "points": 0
         },
         {
+          "questionId": 0,
           "answer": "GIT",
           "points": 10
         },
         {
+          "questionId": 0,
           "answer": "CVS",
           "points": -5
         },
         {
+          "questionId": 0,
           "answer": "Mercurial",
           "points": 5
         },
         {
+          "questionId": 0,
           "answer": "HUHH?",
           "points": 0
         }
@@ -29,22 +34,27 @@
       "question": "What is your favorite cat?",
       "answers": [
         {
+          "questionId": 1,
           "answer": "Ceiling Cat",
           "points": 10
         },
         {
+          "questionId": 1,
           "answer": "Invisible Bike Cat",
           "points": 5
         },
         {
+          "questionId": 1,
           "answer": "Octocat",
           "points": 8
         },
         {
+          "questionId": 1,
           "answer": "Grumpy Cat",
           "points": 12
         },
         {
+          "questionId": 1,
           "answer": "Monorail Cat",
           "points": 2
         }
@@ -54,22 +64,32 @@
       "question": "What is your favorite jewel?",
       "answers": [
         {
+          "questionId": 2,
           "answer": "Diamond",
           "points": 5
         },
         {
+          "questionId": 2,
           "answer": "Ruby",
           "points": 10
         },
         {
+          "questionId": 2,
           "answer": "Kryptonite",
           "points": 10
         },
         {
+          "questionId": 2,
           "answer": "Emerald",
           "points": -5
         }
       ]
     }
-  ]
+  ],
+    "users": [
+      {
+        "name": "John",
+        "totalScore": 10
+      }
+    ]
 }

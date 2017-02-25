@@ -23,12 +23,11 @@ class Quiz extends Component {
   handleNextQuestion(answer) {
     const { currentQuestion } = this.props.questions
     this.props.nextQuestion(currentQuestion)
-    this.props.getPoints(answer.points)
+    this.props.getPoints(answer)
   }
 
   render() {
     const {questions, isLoading, isComplete, hasError, currentQuestion, totalScore } = this.props.questions
-
     if (isLoading) {
       return <div>Loading...</div>
     } else if (isComplete) {
