@@ -1,9 +1,11 @@
+import { SET_CURRENT_USER } from '../actions/set_current_user'
 import { FETCH_QUESTIONS, CATCH_ERRORS } from '../actions/fetch_questions'
 import { NEXT_QUESTION } from '../actions/next_question'
 import { PREVIOUS_QUESTION } from '../actions/previous_question'
 import { GET_POINTS } from '../actions/get_points'
 
 const defaultState = {
+  currentUser: { name: '', points: 0 },
   currentQuestion: 0,
   questions: [],
   isLoading: true,
@@ -14,6 +16,12 @@ const defaultState = {
 
 export default function(state = defaultState, action ) {
   switch (action.type) {
+    case SET_CURRENT_USER:
+      return Object.assign({}, state, {
+        currentUser: action.payload.name
+      }
+    )
+
     case FETCH_QUESTIONS:
       return Object.assign({}, state, {
         questions: action.payload.data,
@@ -52,6 +60,7 @@ export default function(state = defaultState, action ) {
     )
 
     case GET_POINTS:
+      console.log(state)
       // In case the person returns to the previous question and answer it again,
       // the answer will be replaced by the new answer
       let existingAnswer = state.userAnswers.find(t => t.questionId === action.payload.questionId)
