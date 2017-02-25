@@ -17,7 +17,7 @@ body {
 
 ul {
   list-style: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .align-center {
@@ -28,7 +28,7 @@ ul {
   background: $bg-answer;
   cursor: pointer;
   list-style: none;
-  margin: 5px 0px;
+  margin: 5px 0;
   padding: 10px;
 }
 
@@ -41,7 +41,7 @@ ul {
   border: none;
   color: black;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   padding: 10px 15px;
 }
@@ -61,19 +61,61 @@ ul {
   outline: none;
 }
 
+.button-holder {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contrast-color {
+  color: $contrast-color;
+}
+
+.fa-trophy {
+  margin: 0 20px;
+}
+
+.form-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: #DDD;
+  display: block;
+  font-size: 16px;
+  margin: 30px auto;
+  width: 60%;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
 .float-right {
   float: right;
 }
 
+.highscore {
+  margin: 30px;
+
+  ul {
+    margin: auto;
+    width: 50%;
+  }
+}
+
+.home p {
+  text-align: center;
+}
+
 .panel {
   margin: auto;
-  padding: 20px 0px;
+  padding: 20px 0;
   width: 70%;
 }
 
 .panel-header {
   background: white;
   border: 1px solid $bg-quiz-body;
+  padding: 0 10px;
   text-align: center;
 }
 
@@ -81,4 +123,9 @@ ul {
   background: $bg-quiz-body;
   color: #DDD;
   padding: 20px;
+}
+
+.ranking-number {
+  float: left;
+  width: 40px;
 }

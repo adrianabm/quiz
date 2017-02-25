@@ -87,5 +87,15 @@
     }
   ],
   "users": [
+    {
+      "name": "Adriana",
+      "score": 27,
+      "id": 1
+    },
+    {
+      "name": "John",
+      "score": 32,
+      "id": 2
+    }
   ]
 }

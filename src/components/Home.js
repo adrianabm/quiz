@@ -35,24 +35,29 @@ class Home extends Component {
           <h3>What are your favorite things?</h3>
           <p>Check how many points you can earn with this awesome quiz!</p>
         </div>
-        <div className="panel-body">
+        <div className="panel-body home">
           <p>Please enter your name before starting the quiz.</p>
           <form
+            autoComplete="off"
             ref="userForm"
             onSubmit={ this.handleSubmit.bind(this) }>
             <input
               value = { this.state.name }
               onChange={ this.onInputChange.bind(this) }
               type="text"
+              className="form-input"
               ref="name"
               name="name"
               placeholder="Your name here" />
-            <button
-              disabled={(this.state.name === '')}
-              type="submit"
-              className="button"
-              to={ `/quiz` }>Yay! Let's start it!
-            </button>
+            <div className="button-holder">
+            <input
+                value="Yay! Let's start it!"
+                title="Yay! Let's start it!"
+                disabled={(this.state.name === '')}
+                type="submit"
+                className="button"
+                to={ `/quiz` } />
+              </div>
           </form>
         </div>
       </div>

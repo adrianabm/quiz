@@ -18,10 +18,10 @@ class EndScreen extends Component {
     return (
       <div className="panel">
         <div className="panel-header">
-          <h3>End of the Quiz</h3>
+          <h3>The End</h3>
         </div>
         <div className="panel-body">
-          <h4>Congratulations! You made { this.props.score } points</h4>
+          <h3 className="align-center">Congratulations! You made <span className="contrast-color">{ this.props.score }</span> points</h3>
           <HighScore highscore = { highscore } />
         </div>
       </div>
