@@ -16,7 +16,12 @@ body {
 }
 
 ul {
+  list-style: none;
   padding: 0px;
+}
+
+.align-center {
+  text-align: center;
 }
 
 .answer {

@@ -5,7 +5,7 @@ import { PREVIOUS_QUESTION } from '../actions/previous_question'
 import { GET_POINTS } from '../actions/get_points'
 
 const defaultState = {
-  currentUser: { name: '', points: 0 },
+  currentUser: 'Unknown',
   currentQuestion: 0,
   questions: [],
   isLoading: true,

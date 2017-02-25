@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const HighScore = (props) => {
+class HighScore extends Component {
+  render() {
+    const highscore = this.props.highscore
+    let scores = highscore.map((singleScore) => {
+      return (
+        <li key = { singleScore.id }>
+          { singleScore.name }, { singleScore.score }
+        </li>
+      )
+    })
 
-  return (
-    <div>
-      { props.highscore }
-    </div>
-  )
+    return (
+      <div>
+        <h4>Users HighScore Ranking</h4>
+        <ul>{ scores }</ul>
+      </div>
+    )
+  }
 }
 
 export default HighScore

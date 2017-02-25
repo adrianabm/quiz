@@ -9,18 +9,6 @@ class EndScreen extends Component {
     this.props.saveScore(user)
   }
 
-  renderScore(highscore) {
-    console.log(highscore)
-    return highscore.map((singleScore) => {
-      return (
-        <li key = { singleScore.id }>
-          { singleScore.name }, { singleScore.score }
-        </li>
-      )
-    })
-
-  }
-
   render() {
     const { highscore, isLoading } = this.props.highscore
 
@@ -34,7 +22,7 @@ class EndScreen extends Component {
         </div>
         <div className="panel-body">
           <h4>Congratulations! You made { this.props.score } points</h4>
-          <ul>{ this.renderScore(highscore) } </ul>
+          <HighScore highscore = { highscore } />
         </div>
       </div>
     )
