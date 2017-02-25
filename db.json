@@ -86,10 +86,16 @@
       ]
     }
   ],
-    "users": [
-      {
-        "name": "John",
-        "totalScore": 10
-      }
-    ]
+  "users": [
+    {
+      "id": 0,
+      "name": "John",
+      "totalScore": 10
+    },
+    {
+      "score": 25,
+      "currentUser": "dsasa",
+      "id": 1
+    }
+  ]
 }

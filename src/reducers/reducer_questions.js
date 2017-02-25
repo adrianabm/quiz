@@ -60,7 +60,6 @@ export default function(state = defaultState, action ) {
     )
 
     case GET_POINTS:
-      console.log(state)
       // In case the person returns to the previous question and answer it again,
       // the answer will be replaced by the new answer
       let existingAnswer = state.userAnswers.find(t => t.questionId === action.payload.questionId)

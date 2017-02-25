@@ -35,12 +35,12 @@ class Quiz extends Component {
   }
 
   render() {
-    const {questions, isLoading, isComplete, hasError, currentQuestion, userAnswers } = this.props.questions
+    const {questions, isLoading, isComplete, hasError, currentQuestion, userAnswers, currentUser } = this.props.questions
 
     if (isLoading) {
       return <div className="panel">Loading...</div>
     } else if (isComplete) {
-      return <EndScreen score = { this.calculateScore(userAnswers) } />
+      return <EndScreen score = { this.calculateScore(userAnswers) } currentUser = { currentUser }/>
     } else if (hasError) {
       return <ErrorScreen />
     }
