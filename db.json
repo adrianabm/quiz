@@ -88,14 +88,69 @@
   ],
   "users": [
     {
-      "id": 0,
-      "name": "John",
-      "totalScore": 10
+      "name": "Adriana",
+      "score": 25,
+      "id": 1
     },
     {
+      "name": "Drikus",
+      "score": 12,
+      "id": 2
+    },
+    {
+      "name": "dsaa",
       "score": 25,
-      "currentUser": "dsasa",
-      "id": 1
+      "id": 3
+    },
+    {
+      "name": "Omid",
+      "score": 12,
+      "id": 4
+    },
+    {
+      "name": "Amid",
+      "score": 25,
+      "id": 5
+    },
+    {
+      "name": "Larissa",
+      "score": 25,
+      "id": 6
+    },
+    {
+      "name": "Benko",
+      "score": 25,
+      "id": 7
+    },
+    {
+      "name": "Benko",
+      "score": 13,
+      "id": 8
+    },
+    {
+      "name": "mendo",
+      "score": 28,
+      "id": 9
+    },
+    {
+      "name": "Krakdo",
+      "score": 22,
+      "id": 10
+    },
+    {
+      "name": "dass",
+      "score": 15,
+      "id": 11
+    },
+    {
+      "name": "lalalalalalalal",
+      "score": 25,
+      "id": 12
+    },
+    {
+      "name": "Sbaodj",
+      "score": 25,
+      "id": 13
     }
   ]
 }
