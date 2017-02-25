@@ -26,12 +26,21 @@ class Quiz extends Component {
     this.props.getPoints(answer)
   }
 
+  calculateScore(userAnswers) {
+    var totalScore = 0
+    userAnswers.map((answer) => {
+      totalScore = totalScore + answer.points
+    })
+    return totalScore
+  }
+
   render() {
-    const {questions, isLoading, isComplete, hasError, currentQuestion, totalScore } = this.props.questions
+    const {questions, isLoading, isComplete, hasError, currentQuestion, userAnswers } = this.props.questions
+
     if (isLoading) {
-      return <div>Loading...</div>
+      return <div className="panel">Loading...</div>
     } else if (isComplete) {
-      return <EndScreen score = {totalScore} />
+      return <EndScreen score = { this.calculateScore(userAnswers) } />
     } else if (hasError) {
       return <ErrorScreen />
     }

@@ -7,7 +7,7 @@ const defaultState = {
   currentQuestion: 0,
   questions: [],
   isLoading: true,
-  totalScore: [],
+  userAnswers: [],
   isComplete: false,
   hasError: false
 }
@@ -54,13 +54,13 @@ export default function(state = defaultState, action ) {
     case GET_POINTS:
       // In case the person returns to the previous question and answer it again,
       // the answer will be replaced by the new answer
-      let existingAnswer = state.totalScore.find(t => t.questionId === action.payload.questionId)
+      let existingAnswer = state.userAnswers.find(t => t.questionId === action.payload.questionId)
       if (existingAnswer === undefined) {
         return Object.assign({}, state, {
-          totalScore: [ ...state.totalScore, action.payload ]
+          userAnswers: [ ...state.userAnswers, action.payload ]
         })
       } else {
-        let newAnswers = state.totalScore.map((answer) => {
+        let newAnswers = state.userAnswers.map((answer) => {
           if (answer.questionId === action.payload.questionId) {
             return Object.assign({}, answer, {
               points: action.payload.points,
@@ -70,7 +70,7 @@ export default function(state = defaultState, action ) {
           return answer
         })
         return Object.assign({}, state, {
-          totalScore: newAnswers
+          userAnswers: newAnswers
         })
       }
   }
