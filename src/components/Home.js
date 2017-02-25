@@ -5,6 +5,16 @@ import { connect } from 'react-redux'
 import setCurrentUser from '../actions/set_current_user'
 
 class Home extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = { name: '' }
+  }
+
+  onInputChange(event) {
+    this.setState({ name: event.target.value })
+  }
+
   handleSubmit(event) {
     event.preventDefault()
 
@@ -31,11 +41,14 @@ class Home extends Component {
             ref="userForm"
             onSubmit={ this.handleSubmit.bind(this) }>
             <input
+              value = { this.state.name }
+              onChange={ this.onInputChange.bind(this) }
               type="text"
               ref="name"
               name="name"
               placeholder="Your name here" />
             <button
+              disabled={(this.state.name === '')}
               type="submit"
               className="button"
               to={ `/quiz` }>Yay! Let's start it!
