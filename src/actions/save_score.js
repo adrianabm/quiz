@@ -16,6 +16,7 @@ export default (user) => {
       .then( response => {
         dispatch({ type: SAVE_SCORE, payload: response })
         dispatch(getHighScore())
-      })
+      }
+    )
   }
 }

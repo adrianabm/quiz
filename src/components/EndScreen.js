@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import saveScore from '../actions/save_score'
 import HighScore from './HighScore'
+import ErrorScreen from './ErrorScreen'
 
 class EndScreen extends Component {
   componentWillMount() {
@@ -10,11 +11,14 @@ class EndScreen extends Component {
   }
 
   render() {
-    const { highscore, isLoading } = this.props.highscore
+    const { highscore, isLoading, hasError } = this.props.highscore
 
     if (isLoading) {
       return <div className="panel">Loading...</div>
+    } else if (hasError) {
+      return <ErrorScreen message="Ops... Something went wrong." />
     }
+
     return (
       <div className="panel">
         <div className="panel-header">

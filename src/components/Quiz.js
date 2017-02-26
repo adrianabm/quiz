@@ -42,7 +42,7 @@ class Quiz extends Component {
     } else if (isComplete) {
       return <EndScreen score = { this.calculateScore(userAnswers) } currentUser = { currentUser }/>
     } else if (hasError) {
-      return <ErrorScreen />
+      return <ErrorScreen message="Questions could not be loaded."/>
     }
 
     return (
