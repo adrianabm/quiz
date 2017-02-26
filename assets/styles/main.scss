@@ -9,6 +9,7 @@ $bg-answer-hover: #666666;
 $bg-main: #EEEEEE;
 $bg-quiz-body: #212121;
 $contrast-color: #E9B000;
+$break-small: 480px;
 
 body {
   background: $bg-main;
@@ -109,7 +110,11 @@ ul {
 .panel {
   margin: auto;
   padding: 20px 0;
-  width: 70%;
+  width: 95%;
+
+  @media (min-width: $break-small) {
+    width: 70%;
+  }
 }
 
 .panel-header {
